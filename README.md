@@ -1,9 +1,7 @@
 ## Description
 
 # log-service
-A NestJs app that searches treats log files 
-Node v19.2.0
-Fastify as http provider
+A NestJs app that searches treats log files/ Node v19.2.0/ Fastify as http provider
 
 ## Installation
 
@@ -28,7 +26,6 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Documentation
-"[http://localhost:3000/api-documentation]"
+## Documentation (http://localhost:3000/api-documentation)
 Add more files under var/logs/ 
 
