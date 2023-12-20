@@ -25,9 +25,14 @@ export class LogsService {
         .filter((line) => line.trim() !== '')
         .reverse();
     } catch (error) {
-      throw new Exceptions.InternalServerErrorException(
-        `Child process error: ${error}`,
-      );
+      if (error?.code === 1 && error?.stdout === '' && error?.stderr === '')
+        return ['    ************   NO RESULTS  ************    '];
+      else if (error.stderr.includes('No such file or directory'))
+        throw new Exceptions.NotFoundException('File not found.');
+      else
+        throw new Exceptions.InternalServerErrorException(
+          `Child process error: ${error}`,
+        );
     }
   }
 
