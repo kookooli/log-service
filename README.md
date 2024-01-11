@@ -1,7 +1,13 @@
 ## Description
 
 # log-service
-A NestJs app that searches treats log files/ Node v19.2.0/ Fastify as http provider
+A NestJs app that searches treats log files/ Node v19.2.0/ 
+Fastify as http provider as performance is a key reuirement. 
+
+Basically there are two key points in the app. 
+- We should not load the whole file on memory, i've chosen readline to read the file line by line.
+- We should not search and read the whole file since we are give a specific number of rows, so we start reading 
+at a specific position at the end of the file while covering the defined number of rows. 
 
 ## Installation
 
